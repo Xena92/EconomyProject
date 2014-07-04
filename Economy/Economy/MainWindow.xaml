@@ -1,0 +1,47 @@
+﻿<Window x:Class="Economy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid RenderTransformOrigin="0.499,0.505">
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="94,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="TextBox_Indkomst_Kommentar"/>
+        <Label Content="Mad:" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Her bør alle madindkøb norteres"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="392,94,0,0" VerticalAlignment="Top" Height="26" Checked="CheckBox_Indkomst"/>
+        <Label Content="Kommentar" HorizontalAlignment="Left" Margin="94,57,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Skriv en kommentar til hvor det er købt."/>
+        <Label Content="Beløb" HorizontalAlignment="Left" Margin="270,54,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Indtast beløb."/>
+        <Label Content="Special" HorizontalAlignment="Left" Margin="383,57,0,0" VerticalAlignment="Top" Height="26" ToolTipService.InitialShowDelay="0" ToolTip="Kryds af, hvis varen er unødvendig for månedens indkøb. Eksempelvis fastfood. Eller ved indkomst: Engangs indkomster"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="258,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Indkomst_Belob"/>
+        <Label Content="Indkomst:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Information om hvilke indkomster der har været denne måned"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="94,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="TextBox_Mad_Kommentar"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="258,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Mad_Belob"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="392,125,0,0" VerticalAlignment="Top" Height="26" Checked="CheckBox_Mad"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="94,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="TextBox_Transport_Kommentar"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="258,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Transport_Belob"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="392,156,0,0" VerticalAlignment="Top" Height="26" Checked="CheckBox_Transport"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="94,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="TextBox_Diverse_Kommentar"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="258,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Diverse_Belob"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="392,187,0,0" VerticalAlignment="Top" Height="26" Checked="CheckBox_Diverse"/>
+        <Label Content="Transport:" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Information om hvor meget der er brugt på transport"/>
+        <Label Content="Diverse:" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Alle fornøjelsesting skal indtastes her. F.eks. byture eller køb af elektronik"/>
+        <Label Content="Regninger:" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Regninger der ikke kommer hver måned"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="94,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="TextBox_Regninger_Kommentar"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="258,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Regninger_Belob"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="392,218,0,0" VerticalAlignment="Top" Height="26" Checked="CheckBox_Regninger"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="94,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="TextBox_Faste_Kommentar"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="258,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Faste_Belob"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="392,249,0,0" VerticalAlignment="Top" Height="26" Checked="CheckBox_Faste"/>
+        <Label Content="Øvrige faste:" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Alle regninger der modtages månedligt "/>
+        <Button Content="Gem og afslut" HorizontalAlignment="Left" Margin="414,288,0,0" VerticalAlignment="Top" Width="93" Click="GemOgAfslut"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="19,20,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="383,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" TextChanged="TextBox_Maned_Ar"/>
+        <Label Content="Måned/År:" HorizontalAlignment="Left" Margin="308,7,0,0" VerticalAlignment="Top" ToolTipService.InitialShowDelay="0" ToolTip="Måned og år for den givne indtastning. F.eks. 07/2014"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="455,85,0,0" VerticalAlignment="Top" Width="34" Height="24" Click="Gem_Indkomst"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="455,116,0,0" VerticalAlignment="Top" Width="34" Height="24" Click="Gem_Mad"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="455,147,0,0" VerticalAlignment="Top" Width="34" Height="24" Click="Gem_Transport"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="455,178,0,0" VerticalAlignment="Top" Width="34" Height="24" Click="Gem_Diverse"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="455,209,0,0" VerticalAlignment="Top" Width="34" Height="24" Click="Gem_Regninger"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="455,240,0,0" VerticalAlignment="Top" Width="34" Height="24" Click="Gem_Faste"/>
+        <Label Content="Navn:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="55,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_Navn"/>
+
+    </Grid>
+</Window>
