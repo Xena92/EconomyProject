@@ -8,21 +8,21 @@ namespace Economy.Model {
     class Person {
         public string name;
 
-        private Dictionary<decimal, string> _indkomstDic;
-        private Dictionary<decimal, string> _madDic;
-        private Dictionary<decimal, string> _transportDic;
-        private Dictionary<decimal, string> _diverseDic;
-        private Dictionary<decimal, string> _regningerDic;
-        private Dictionary<decimal, string> _fasteDic;
+        public List<Expense> indkomstList;
+        public List<Expense> madList;
+        public List<Expense> transportList;
+        public List<Expense> diverseList;
+        public List<Expense> regningerList;
+        public List<Expense> fasteList;
 
 
         public Person() {
-            _indkomstDic = new Dictionary<decimal, string>();
-            _madDic = new Dictionary<decimal, string>();
-            _transportDic = new Dictionary<decimal, string>();
-            _diverseDic = new Dictionary<decimal, string>();
-            _regningerDic = new Dictionary<decimal, string>();
-            _fasteDic = new Dictionary<decimal, string>();
+            indkomstList = new List<Expense>();
+            madList = new List<Expense>();
+            transportList = new List<Expense>();
+            diverseList = new List<Expense>();
+            regningerList = new List<Expense>();
+            fasteList = new List<Expense>();
         }
 
 

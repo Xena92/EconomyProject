@@ -1,0 +1,13 @@
+﻿<Window x:Class="PracticeGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="LabelTesting" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="98,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Comment"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="348,126,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="223,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Price"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="411,126,0,0" VerticalAlignment="Top" Width="34" Click="Save"/>
+        <Button Content="Save and Quit" HorizontalAlignment="Left" Margin="380,272,0,0" VerticalAlignment="Top" Width="90" Click="SaceAndQuit"/>
+    </Grid>
+</Window>

@@ -20,7 +20,6 @@ namespace Economy {
     /// </summary>
     public partial class MainWindow : Window {
         private EconomyController _controller;
-        private string _indkomstBelob;
 
         public MainWindow() {
             InitializeComponent();
@@ -36,112 +35,127 @@ namespace Economy {
         }
 
         private void Gem_Indkomst(object sender, RoutedEventArgs e) {
-            
+            _controller.AddToIndkomstList();
         }
 
         private void TextBox_Navn(object sender, TextChangedEventArgs e) {
             var textBox = sender as TextBox;
 
-            _controller.name = textBox.Text;
+            _controller.SetName(textBox.Text);
         }
 
         private void GemOgAfslut(object sender, RoutedEventArgs e) {
-            Console.WriteLine(_controller.name);
+            _controller.txt.WriteToFile();
+            this.Close();
         }
 
         private void TextBox_Indkomst_Belob(object sender, TextChangedEventArgs e) {
             var textBox = sender as TextBox;
 
-            _indkomstBelob = textBox.Text;
-        }
-
-        private void CheckBox_Indkomst(object sender, RoutedEventArgs e) {
-
+            _controller.amount = decimal.Parse(textBox.Text);
         }
 
         private void TextBox_Diverse_Belob(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
+            _controller.amount = decimal.Parse(textBox.Text);
         }
 
         private void TextBox_Transport_Kommentar(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
+            _controller.comment = textBox.Text;
         }
 
         private void TextBox_Transport_Belob(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
-        }
-
-        private void CheckBox_Transport(object sender, RoutedEventArgs e) {
-
+            _controller.amount = decimal.Parse(textBox.Text);
         }
 
         private void Gem_Transport(object sender, RoutedEventArgs e) {
-
+            _controller.AddToTransportList();
         }
 
         private void TextBox_Diverse_Kommentar(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
-        }
-
-        private void CheckBox_Diverse(object sender, RoutedEventArgs e) {
-
+            _controller.comment = textBox.Text;
         }
 
         private void Gem_Diverse(object sender, RoutedEventArgs e) {
-
+            _controller.AddToDiverseList();
         }
 
         private void TextBox_Regninger_Kommentar(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
+            _controller.comment = textBox.Text;
         }
 
         private void TextBox_Regninger_Belob(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
-        }
-
-        private void CheckBox_Regninger(object sender, RoutedEventArgs e) {
-
+            _controller.amount = decimal.Parse(textBox.Text);
         }
 
         private void Gem_Regninger(object sender, RoutedEventArgs e) {
-
+            _controller.AddToRegningerList();
         }
 
         private void TextBox_Faste_Kommentar(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
+            _controller.comment = textBox.Text;
         }
 
         private void TextBox_Faste_Belob(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
-        }
-
-        private void CheckBox_Faste(object sender, RoutedEventArgs e) {
-
+            _controller.amount = decimal.Parse(textBox.Text);
         }
 
         private void Gem_Faste(object sender, RoutedEventArgs e) {
-
+            _controller.AddToFasteList();
         }
 
         private void TextBox_Maned_Ar(object sender, TextChangedEventArgs e) {
 
+            if (!_controller.lockDate) {
+                var textBox = sender as TextBox;
+
+                _controller.SetDate(textBox.Text);
+            }
+            else
+                MessageBox.Show("Nix pille!");
         }
 
         private void TextBox_Mad_Kommentar(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
+            _controller.comment = textBox.Text;
         }
 
         private void TextBox_Mad_Belob(object sender, TextChangedEventArgs e) {
+            var textBox = sender as TextBox;
 
-        }
-
-        private void CheckBox_Mad(object sender, RoutedEventArgs e) {
-
+            _controller.amount = decimal.Parse(textBox.Text);
         }
 
         private void Gem_Mad(object sender, RoutedEventArgs e) {
-
+            _controller.AddToMadList();
         }
 
+        private void Button_GemForPerson(object sender, RoutedEventArgs e) {
+            if (_controller.CheckNameAndDate()) {
+                _controller.AddPerson();
+                _controller.lockDate = true;
+
+                MessageBox.Show("Husk at skrive et nyt navn øverst");
+            }
+            else
+                MessageBox.Show("Du mangler at udfylde navn og/eller dato");
+
+        }
     }
 }
