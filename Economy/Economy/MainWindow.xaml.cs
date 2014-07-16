@@ -22,140 +22,63 @@ namespace Economy {
         private EconomyController _controller;
 
         public MainWindow() {
-            InitializeComponent();
 
             _controller = new EconomyController();
-        }
-
-        private void TextBox_Indkomst_Kommentar(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
+            DatePerson datePersonWindow = new DatePerson(_controller, this);
             
-            string textValue = textBox.Text;
+            datePersonWindow.Topmost = true;
+            datePersonWindow.Show();
+            this.IsEnabled = false;
+
+            InitializeComponent();
+
         }
 
-        private void Gem_Indkomst(object sender, RoutedEventArgs e) {
-            _controller.AddToIndkomstList();
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            int index = DropDown.SelectedIndex;
+
+            _controller.amount = decimal.Parse(AmountBox.Text);
+            _controller.comment = CommentBox.Text;
+            //Do check
+            switch (index)
+            {
+                case 0:
+                    _controller.AddToIndkomstList();
+                    break;
+                case 1:
+                    _controller.AddToMadList();
+                    break;
+                case 2:
+                    _controller.AddToTransportList();
+                    break;
+                case 3:
+                    _controller.AddToDiverseList();
+                    break;
+                case 4:
+                    _controller.AddToRegningerList();
+                    break;
+                case 5:
+                    _controller.AddToFasteList();
+                    break;
+            }
+
+            CommentBox.Text = string.Empty;
+            AmountBox.Text = string.Empty;
         }
 
-        private void TextBox_Navn(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.SetName(textBox.Text);
-        }
-
-        private void GemOgAfslut(object sender, RoutedEventArgs e) {
+        private void DoneButton_Click(object sender, RoutedEventArgs e)
+        {
             _controller.txt.WriteToFile();
             this.Close();
         }
 
-        private void TextBox_Indkomst_Belob(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
+        private void NewPerson_Click(object sender, RoutedEventArgs e)
+        {
+            DatePerson datePersonWindow = new DatePerson(_controller, this);
 
-            _controller.amount = decimal.Parse(textBox.Text);
-        }
-
-        private void TextBox_Diverse_Belob(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.amount = decimal.Parse(textBox.Text);
-        }
-
-        private void TextBox_Transport_Kommentar(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.comment = textBox.Text;
-        }
-
-        private void TextBox_Transport_Belob(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.amount = decimal.Parse(textBox.Text);
-        }
-
-        private void Gem_Transport(object sender, RoutedEventArgs e) {
-            _controller.AddToTransportList();
-        }
-
-        private void TextBox_Diverse_Kommentar(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.comment = textBox.Text;
-        }
-
-        private void Gem_Diverse(object sender, RoutedEventArgs e) {
-            _controller.AddToDiverseList();
-        }
-
-        private void TextBox_Regninger_Kommentar(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.comment = textBox.Text;
-        }
-
-        private void TextBox_Regninger_Belob(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.amount = decimal.Parse(textBox.Text);
-        }
-
-        private void Gem_Regninger(object sender, RoutedEventArgs e) {
-            _controller.AddToRegningerList();
-        }
-
-        private void TextBox_Faste_Kommentar(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.comment = textBox.Text;
-        }
-
-        private void TextBox_Faste_Belob(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.amount = decimal.Parse(textBox.Text);
-        }
-
-        private void Gem_Faste(object sender, RoutedEventArgs e) {
-            _controller.AddToFasteList();
-        }
-
-        private void TextBox_Maned_Ar(object sender, TextChangedEventArgs e) {
-
-            if (!_controller.lockDate) {
-                var textBox = sender as TextBox;
-
-                _controller.SetDate(textBox.Text);
-            }
-            else
-                MessageBox.Show("Nix pille!");
-        }
-
-        private void TextBox_Mad_Kommentar(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.comment = textBox.Text;
-        }
-
-        private void TextBox_Mad_Belob(object sender, TextChangedEventArgs e) {
-            var textBox = sender as TextBox;
-
-            _controller.amount = decimal.Parse(textBox.Text);
-        }
-
-        private void Gem_Mad(object sender, RoutedEventArgs e) {
-            _controller.AddToMadList();
-        }
-
-        private void Button_GemForPerson(object sender, RoutedEventArgs e) {
-            if (_controller.CheckNameAndDate()) {
-                _controller.AddPerson();
-                _controller.lockDate = true;
-
-                MessageBox.Show("Husk at skrive et nyt navn øverst");
-            }
-            else
-                MessageBox.Show("Du mangler at udfylde navn og/eller dato");
-
+            datePersonWindow.Topmost = true;
+            datePersonWindow.Show();
         }
     }
 }

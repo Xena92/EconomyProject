@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 using Economy.Model;
 
 namespace Economy.Controller {
-    class EconomyController {
+    public class EconomyController {
         public string comment;
         public decimal amount;
         public WriteToTxt txt;
-        public bool lockDate; 
+        public bool lockDate;
 
         public EconomyController() {
             txt = new WriteToTxt();
-            txt._personList.Add(new Person());
             lockDate = false;
         }
 
-        public void AddPerson() {
-            txt._personList.Add(new Person());
+        public void AddPerson(string name) {
+            txt._personList.Add(new Person(name));
 
             lockDate = true;
         }

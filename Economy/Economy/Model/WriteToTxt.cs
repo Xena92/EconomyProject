@@ -6,7 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 
 namespace Economy.Model {
-    class WriteToTxt {
+    public class WriteToTxt {
         public List<Person> _personList;
         public string date;
 
@@ -16,7 +16,7 @@ namespace Economy.Model {
 
 
         public void WriteToFile() {
-            string fileName = "C:\\Users\\bruger\\Documents\\Economy\\" + date + ".txt";
+            string fileName = "C:\\Economy\\" + date + ".txt";
             int categoryIndex;
             List<List<Expense>> expensesList = new List<List<Expense>>();
 
@@ -35,17 +35,17 @@ namespace Economy.Model {
                 foreach (List<Expense> list in expensesList) {
                     file.WriteLine(category[categoryIndex]);
                     for (int i = 0; i < list.Count; i++) {
-                        file.WriteLine(list[i].comment + "\t\t" + list[i].amount);
+                        file.WriteLine("\t" + list[i].comment.PadRight(30) + "\t" + list[i].amount);
 
 
                     }
                     file.WriteLine("");
                     categoryIndex++;
                 }
-                file.WriteLine("");
+                file.WriteLine("\n--------------------------");
             }
 
-            file.WriteLine();
+            file.WriteLine("");
 
             file.Close();
         }

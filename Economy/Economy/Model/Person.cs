@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Economy.Model {
-    class Person {
+    public class Person {
         public string name;
 
         public List<Expense> indkomstList;
@@ -16,7 +16,9 @@ namespace Economy.Model {
         public List<Expense> fasteList;
 
 
-        public Person() {
+        public Person(string name) {
+            this.name = name;
+
             indkomstList = new List<Expense>();
             madList = new List<Expense>();
             transportList = new List<Expense>();

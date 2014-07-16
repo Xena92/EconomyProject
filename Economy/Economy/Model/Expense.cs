@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Economy.Model {
-    class Expense {
+    public class Expense {
         public string comment;
         public decimal amount;
 
