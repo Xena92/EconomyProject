@@ -1,11 +1,13 @@
 ﻿<Window x:Class="Economy.DatePerson"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="DatePerson" Height="200" Width="300">
+        Title="Name and date" Height="200" Width="300">
     <Grid>
-        <TextBox Name="PersonName" Text="Name" HorizontalAlignment="Left" Height="25" Margin="20,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ExpenseDate" HorizontalAlignment="Left" Height="25" Margin="150,75,-43,0" TextWrapping="Wrap" Text="Year-Month" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="PersonName" HorizontalAlignment="Left" Height="25" Margin="20,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ExpenseDate" HorizontalAlignment="Left" Height="25" Margin="150,75,-43,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="115,130,0,0" VerticalAlignment="Top" Width="70" Height="25" Click="StartButton_Click"/>
+        <Label Content="Navn" HorizontalAlignment="Left" Margin="55,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="ÅÅÅÅ-MM" HorizontalAlignment="Left" Margin="180,49,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

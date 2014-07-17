@@ -40,7 +40,7 @@ namespace Economy {
 
             _controller.amount = decimal.Parse(AmountBox.Text);
             _controller.comment = CommentBox.Text;
-            //Do check
+            
             switch (index)
             {
                 case 0:

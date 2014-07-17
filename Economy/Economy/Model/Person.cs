@@ -14,6 +14,7 @@ namespace Economy.Model {
         public List<Expense> diverseList;
         public List<Expense> regningerList;
         public List<Expense> fasteList;
+        public List<decimal> categoryExpensesList;
 
 
         public Person(string name) {
@@ -25,6 +26,7 @@ namespace Economy.Model {
             diverseList = new List<Expense>();
             regningerList = new List<Expense>();
             fasteList = new List<Expense>();
+            categoryExpensesList = new List<decimal>();
         }
 
 

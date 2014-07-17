@@ -1,24 +1,24 @@
 ﻿<Window x:Class="Economy.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="200" Width="650">
+        Title="Economy Program" Height="200" Width="650">
     <Grid>
         <TextBox Name="CommentBox" HorizontalAlignment="Left" Height="25" Margin="40,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
         <TextBox Name="AmountBox" HorizontalAlignment="Left" Height="25" Margin="250,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
         <ComboBox Name="DropDown" HorizontalAlignment="Left" Margin="400,70,0,0" VerticalAlignment="Top" Width="150" Height="25">
-            <ComboBoxItem Content="Income"/>
-            <ComboBoxItem Content="Food"/>
+            <ComboBoxItem Content="Indkomst"/>
+            <ComboBoxItem Content="Mad"/>
             <ComboBoxItem Content="Transport"/>
-            <ComboBoxItem Content="Other"/>
-            <ComboBoxItem Content="Bills"/>
-            <ComboBoxItem Content="Other Permanent"/>
+            <ComboBoxItem Content="Diverse"/>
+            <ComboBoxItem Content="Regninger"/>
+            <ComboBoxItem Content="Øvrige faste"/>
         </ComboBox>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="580,70,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="SaveButton_Click"/>
-        <Button Name="NewPerson" Content="New Person" HorizontalAlignment="Left" Margin="450,130,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="NewPerson_Click"/>
-        <Button Content="Done" HorizontalAlignment="Left" Margin="555,130,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="DoneButton_Click"/>
-        <Label Content="Comment" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" ToolTip="A comment for the expense"/>
-        <Label Content="Amount" HorizontalAlignment="Left" Margin="293,40,0,0" VerticalAlignment="Top" ToolTip="The amount of the expense"/>
-        <Label Content="Category" HorizontalAlignment="Left" Margin="448,40,0,0" VerticalAlignment="Top" ToolTip="The category that the expense belongs to"/>
+        <Button Content="Gem" HorizontalAlignment="Left" Margin="580,70,0,0" VerticalAlignment="Top" Width="50" Height="25" Click="SaveButton_Click"/>
+        <Button Name="NewPerson" Content="Ny Person" HorizontalAlignment="Left" Margin="450,130,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="NewPerson_Click"/>
+        <Button Content="Færdig" HorizontalAlignment="Left" Margin="555,130,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="DoneButton_Click"/>
+        <Label Content="Kommentar" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" ToolTip="A comment for the expense"/>
+        <Label Content="Beløb" HorizontalAlignment="Left" Margin="293,40,0,0" VerticalAlignment="Top" ToolTip="The amount of the expense"/>
+        <Label Content="Kategori" HorizontalAlignment="Left" Margin="448,40,0,0" VerticalAlignment="Top" ToolTip="The category that the expense belongs to"/>
         
     </Grid>
 </Window>
